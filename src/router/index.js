@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Shelf from '@/pages/shelf'
 import Featured from '@/pages/featured'
 import Category from '@/pages/category'
-//import CatList from '@/pages/catlist'
+import CatList from '@/pages/catlist'
 import Rank from '@/pages/rank'
 import List from '@/pages/list'
 import Book from '@/pages/book'
@@ -32,11 +32,11 @@ export default new Router({
       name: 'category',
       component: Category
     },
-    //  {
-    //    path: '/catlist/:major',
-    //    name: 'catlist',
-    //    component: CatList
-    //  },
+    {
+      path: '/catlist/:major',
+      name: 'catlist',
+      component: CatList
+    },
     {
       path: '/rank',
       name: 'rank',

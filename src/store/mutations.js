@@ -100,4 +100,29 @@ export default {
     setStore('FONTSIZE', state.fontSize)
   },
 
+  [DEL_ALL_SHELF](state) {
+    state.shelfBookList.clear();
+    removeStore('SHELFBOOK')
+  },
+
+  [DEL_FROM_SHELF](state, bookIds) {
+    state.shelfBookList = state.shelfBookList.filter(value => {
+      return !bookIds.includes(value.id);
+    })
+    setStore('SHELFBOOK', state.shelfBookList)
+  },
+
+  [SET_SEARCH_HISTORY](state, keyword) {
+    if (state.searchHistory.indexOf(keyword) > -1) {
+      state.searchHistory.splice(state.searchHistory.indexOf(keyword), 1)
+    }
+    state.searchHistory.unshift(keyword)
+    setStory('SEARCHHISTORY', state.searchHistory)
+  },
+
+  [CLEAR_SEARCH_HISTORY](state) {
+    state.searchHistory.splice(0, state.searchHistory.length)
+    removeStore('SEARCHHISTORY')
+  }
+
 }

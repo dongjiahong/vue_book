@@ -108,7 +108,7 @@ export default {
   position: relative;
   height: 100%;
   overflow: hidden;
-  padding-top: 20%;
+  padding-top: 20px;
 }
 
 .split-line {
