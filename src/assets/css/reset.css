@@ -1,0 +1,152 @@
+/* 清除内外边框 */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+/* structural elements 结构元素*/
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+/* list elements 列表元素 */
+
+pre,
+/* text fromatting elements 文本格式元素 */
+
+fieldset,
+lengend,
+button,
+input,
+textarea,
+/*from elements 表单元素 */
+
+th,
+td {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 设置默认字体 */
+
+body,
+button,
+input,
+select,
+textarea {
+  /*for ie*/
+  font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  /* 用ascii字符表示， 使得在任何编译器下都没有问题 */
+}
+
+h1 {
+  font-szie: 18px;
+  /* 18px / 12px = 1.5 */
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 100%
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  /* 将斜体扶正 */
+  font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt {
+  /*统一等宽字体*/
+  font-family: "Courier New", Courier, monospace;
+}
+
+small {
+  /* 小于12px的中文很难阅读，让small正常化 */
+  font-size: 12px;
+}
+
+ul,
+ol {
+  /* 重置列表元素 */
+  list-style: none;
+}
+
+a {
+  /* 重置文本格式元素 */
+  text-decoration: none;
+  color: inherit;
+}
+
+abbr[title],
+acronym[title] {
+  /* ie6不支持abbr； 这里用了属性选择符，ie6也无效 */
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+legend {
+  /* 重置表单元素 */
+  color: #000;
+}
+
+fieldset,
+img {
+  /* 让链接里的img无边框 */
+  border: none;
+}
+
+button,
+input,
+select,
+textarea {
+  /* 使得表单元素在ie下能继承字体大小 */
+  font-size: 100%;
+}
+
+table {
+  /* 重置表格元素 */
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  /* 重置hr */
+  border: none;
+  height: 1px;
+}
+
+html {
+  /* 让非ie浏览器默认也显示垂直滚动条，防止因滚动引起的闪烁 */
+  overflow-y: scroll;
+}
