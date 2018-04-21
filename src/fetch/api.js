@@ -33,7 +33,7 @@ export default {
         major: major,
         minor: minor,
         start: start,
-        limit: limt
+        limit: limit
       })
       .then(data => data.books)
   },
@@ -43,7 +43,7 @@ export default {
   },
 
   getRankBooks(id) {
-    return async (apiUrl + '/rankding' + id)
+    return async (apiUrl + '/ranking/' + id)
   },
 
   getBookList(id, st = 1, size = 10) {

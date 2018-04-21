@@ -80,7 +80,7 @@ export default {
         : (latelyFollower / 10000).toFixed(1) + "万";
     },
 
-    setRetentionRatio(retnetionRatio) {
+    setRetentionRatio(retentionRatio) {
       // toFixed(1)表示返回一个一位小数的字符串
       return parseFloat(retentionRatio).toFixed(1);
     },

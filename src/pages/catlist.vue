@@ -55,7 +55,7 @@ export default {
     this.$docElement = document.documentElement;
     this.$body = document.body;
     this.clientHeight = this.$body.clientHeight;
-    this.$list = this.$ref.catList;
+    this.$list = this.$refs.catList;
     window.addEventListener("scroll", debounce(this.loadMore));
   },
 

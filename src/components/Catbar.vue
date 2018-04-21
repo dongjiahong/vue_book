@@ -8,7 +8,7 @@
                 :data-name="btype.name" 
                 :key="btype.name" 
                 @click="filterChange($event, 'type')"> 
-                {{ type.name }}
+                {{ btype.name }}
             </li>
         </ul>
     </div>
@@ -23,6 +23,17 @@
             {{ minor }}
             </li>
         </ul>
+    </div>
+
+    <div class="cat-brief" v-show="isBrief" @click="spreadFilter">
+        <span>{{ selectedMinor }}</span>
+        <span></span>
+        <span>按{{ selectedTypeName }}</span>
+        <span>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-down"></use>
+            </svg>
+        </span>
     </div>
 
 </section>
@@ -121,3 +132,59 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.cat-bar {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  color: #666;
+  background-color: #fff;
+  z-index: 1;
+
+  .cat-filter {
+    position: relative;
+    border-bottom: 1px solid #e8e8e8;
+    box-sizing: border-box;
+  }
+
+  .cat-filter-list {
+    position: relative;
+    height: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    .cat-filter-item {
+      display: inline-block;
+      padding: 0 5px;
+      line-height: 40px;
+
+      &.active {
+        color: #ed424b;
+      }
+    }
+  }
+
+  .cat-brief {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+
+    span {
+      padding: 0 2px;
+
+      .icon {
+        width: 14px;
+        height: 14px;
+        margin-left: -3px;
+        color: #aaa;
+      }
+    }
+  }
+}
+</style>
