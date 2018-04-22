@@ -18,8 +18,8 @@ npm run build
 npm run build --report
 ```
 
-## 待解决问题
+## 说明
 
-1、当书籍没有被加入到书架时，刷新阅读页面会出错
+这是一个学习项目，抄大神[XNAL](https://github.com/XNAL/ReadMore),并修复了原有的`没有加入书架阅读时刷新会刷新不出的bug`
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
