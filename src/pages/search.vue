@@ -57,7 +57,7 @@ export default {
 
   created: function() {
     api.getSearchHotKeywords().then(data => {
-      this.hotKeywords = data;
+      this.hotKeywords = data.slice(1, 19);
     });
   },
 

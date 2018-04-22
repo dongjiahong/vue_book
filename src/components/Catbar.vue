@@ -111,10 +111,10 @@ export default {
     },
 
     filterChange: function(e, type) {
-      let curTargetData = e.curTargetData.dataset;
+      let curTargetData = e.target.dataset;
       if (type === "type") {
         this.selectedType = curTargetData.value;
-        this.selectedTypeName = curTargetData.name;
+        this.selectedTypeName = curTargetData.value;
       } else {
         this.selectedMinor = curTargetData.value;
       }

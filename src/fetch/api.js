@@ -97,7 +97,7 @@ export default {
   },
 
   getSearchHotKeywords() {
-    return async (apiUrl + '/book/search-hotwords').then(data => data.getSearchHotKeywords)
+    return async (apiUrl + '/book/search-hotwords').then(data => data.searchHotWords)
   },
 
   searchByKeyword(keyword) {
