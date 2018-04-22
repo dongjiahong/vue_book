@@ -136,7 +136,6 @@ export default {
   },
 
   created() {
-    console.log("===> curbok: ", this.curBook);
     this.isAdded = this.curBook.isInShelf;
     if (!this.skinBgList.includes(this.skinColor)) {
       this.SET_SKIN_COLOR("skin_default");

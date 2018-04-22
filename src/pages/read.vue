@@ -18,6 +18,7 @@ import readContent from "@/components/ReadContent";
 import listLoading from "@/components/ListLoading";
 import pageLoading from "@/components/PageLoading";
 import dialog from "@/components/Dialog";
+import { staticPath } from "../util/util";
 
 export default {
   name: "read",
@@ -85,10 +86,12 @@ export default {
     this.bookId = this.$route.params.id;
     for (let book of Object.values(this.shelfBookList)) {
       if (this.bookId === book.id) {
+        // 如果发现书架里有这本书就不去网络拉取，直接使用本地缓存
         this.SET_CUR_BOOK(book);
         break;
       }
     }
+
     this.fetchChapters(this.bookId);
     /*params、query是什么？
         params：/router1/:id ，/router1/123，/router1/789 ,这里的id叫做params

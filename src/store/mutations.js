@@ -30,6 +30,8 @@ export default {
       state.searchHistory = JSON.parse('SEARCHHISTORY')
     }
 
+    state.curBook = getStore('CURBOOK')
+
     state.nightMode = getStore('NIGHTMODE') === 'true' ? true : false
     state.fontSize = Number.isInteger(getStore('FONTSIZE')) ? parseInt(getStore('FONTSIZE')) : 14
     state.skinColor = getStore('SKINCOLOR')
@@ -46,15 +48,17 @@ export default {
 
   [SET_CUR_BOOK](state, book) {
     state.curBook = book;
-    if (!state.curBook.isInShelf) {
+    if (state.curBook.isInShelf) {
       for (let [idx, shelfBook] of Object.entries(state.shelfBookList)) {
         if (shelfBook.id === state.curBook.id) {
+          // splice: 这里用state.curBook替换idx位置的元素，1代表只替换一个对象
           state.shelfBookList.splice(idx, 1, state.curBook)
           setStore('SHELFBOOK', state.shelfBookList)
           break;
         }
       }
     }
+    setStore('CURBOOK', state.curBook)
   },
 
   [ADD_TO_SHELF](state, book) {
